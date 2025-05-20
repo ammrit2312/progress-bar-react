@@ -1,3 +1,3 @@
-This is the demo image: 
+This is the demo gif: 
 
-![alt text](./demo.png)
+![alt text](./demo.gif)

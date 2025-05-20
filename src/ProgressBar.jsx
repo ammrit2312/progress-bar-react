@@ -55,29 +55,57 @@ const ProgressBar = () => {
 
   return (
     <div className={styles.container} ref={progressBarRef}>
-      <div className={styles.progressBarContainer}>
-        <div
-          className={`${styles.bar} ${styles.red}`}
-          style={{ width: `${min}px`, left: 0 }}
-        />
-        <div
-          className={`${styles.bar} ${styles.amber}`}
-          style={{ width: `${max - min}px`, left: `${min}px` }}
-        />
-        <div
-          className={`${styles.bar} ${styles.green}`}
-          style={{ width: `${maxWidth - max}px`, left: `${max}px` }}
-        />
-        <div
-          className={`${styles.handle} ${styles.handle1}`}
-          onMouseDown={() => setDragging("h1")}
-          style={{ left: `${min-10}px` }}
-        />
-        <div
-          className={`${styles.handle} ${styles.handle2}`}
-          onMouseDown={() => setDragging("h2")}
-          style={{ left: `${max-10}px` }}
-        />
+      <div style={{ height: "80px" }}>
+        <div className={styles.progressBarContainer}>
+          <div
+            className={`${styles.bar} ${styles.red}`}
+            style={{ width: `${min}px`, left: 0 }}
+          >
+            <div
+              className={styles.handleTextContainer}
+              style={{ alignItems: "flex-start" }}
+            >
+              <div className={styles.handleTextPointer} />
+              <div>{0}</div>
+            </div>
+          </div>
+          <div
+            className={`${styles.bar} ${styles.amber}`}
+            style={{ width: `${max - min}px`, left: `${min}px` }}
+          />
+          <div
+            className={`${styles.bar} ${styles.green}`}
+            style={{ width: `${maxWidth - max}px`, left: `${max}px` }}
+          >
+            <div
+              className={styles.handleTextContainer}
+              style={{ alignItems: "flex-end" }}
+            >
+              <div className={styles.handleTextPointer} />
+              <div>{100}</div>
+            </div>
+          </div>
+          <div
+            className={`${styles.handle} ${styles.handle1}`}
+            onMouseDown={() => setDragging("h1")}
+            style={{ left: `${min - 10}px` }}
+          >
+            <div className={styles.handleTextContainer}>
+              <div className={styles.handleTextPointer} />
+              <div>{((min * 100) / maxWidth).toFixed(2)}</div>
+            </div>
+          </div>
+          <div
+            className={`${styles.handle} ${styles.handle2}`}
+            onMouseDown={() => setDragging("h2")}
+            style={{ left: `${max - 10}px` }}
+          >
+            <div className={styles.handleTextContainer}>
+              <div className={styles.handleTextPointer} />
+              <div>{((max * 100) / maxWidth).toFixed(2)}</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div style={{ marginTop: "20px" }}>
         <div>Part 1: {part1}</div>

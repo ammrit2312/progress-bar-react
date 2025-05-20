@@ -45,10 +45,26 @@
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, #d2222d, #ffbf00) border-box;
 
-    /* second gradient spans from border to whole element and first one only the element and the border being transparent we get the actual affect */
+  /* second gradient spans from border to whole element and first one only the element and the border being transparent we get the actual affect */
 }
 
 .handle2 {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, #ffbf00, #238823) border-box;
+}
+
+.handleTextContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.handleTextPointer {
+  height: 30px;
+  width: 2px;
+  border: 2px solid rgb(164, 163, 163);
+  margin-top: 25px;
+  border-radius: 2px;
+  margin-bottom: 5px;
 }
